@@ -1,0 +1,195 @@
+/* Centering the entire page content */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Wrapper for all content */
+.container {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+}
+
+/* Header style */
+h1 {
+  color: white;
+  background-color: #9F5DE2;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Form and task list box styles */
+.task-form, .task-list {
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Form inputs */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styling */
+button {
+  background-color: #9F5DE2;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7a38c0;
+}
+
+/* Task card styling */
+.task {
+  padding: 12px;
+  border-left: 5px solid #9F5DE2;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  background-color: #faf7ff;
+  border-radius: 6px;
+}
+
+.task-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #4B0082;
+}
+
+.task-description {
+  color: #444;
+  margin: 4px 0;
+}
+
+.task-status {
+  color: #9F5DE2;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Action buttons */
+.task-actions {
+  margin-top: 10px;
+}
+
+.task-actions button {
+  margin-right: 8px;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Modal Overlay */
+#editModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal content box */
+#editModalContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* Modal inputs */
+#editModalContent input,
+#editModalContent textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Modal button container */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* Buttons inside modal */
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#updateBtn {
+  background-color: #9F5DE2;
+  color: white;
+}
+
+#cancelBtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Toast Styles for delete */
+.toast.delete-toast {
+  background-color: #e53935 !important; /* Red background */
+}
+
+/* Checkbox container: align label + checkbox to the right with label first */
+.checkbox-container {
+  display: flex;
+  justify-content: flex-end; /* push to right */
+  align-items: center;
+  gap: 8px; /* space between label and checkbox */
+  margin-bottom: 15px;
+}
+
+/* Ensure label and checkbox order (label first, checkbox second) */
+.checkbox-container label {
+  order: 1;
+  margin-right: 65%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container input[type="checkbox"] {
+
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}

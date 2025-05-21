@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3176/3176366.png" />
+  <style>
+    /* Toast Styles */
+    .toast {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      font-size: 16px;
+      z-index: 1001;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Hide modal initially */
+    #editModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #editModalContent {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .checkbox-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Task Manager</h1>
+
+    <div class="task-form">
+      <h2>Add Task</h2>
+      <input type="text" id="title" placeholder="Task Title" required>
+      <textarea id="description" placeholder="Task Description" required></textarea>
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="task-list">
+      <h2>Tasks</h2>
+      <div id="tasks"></div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal">
+    <div id="editModalContent">
+      <h3 style="margin-top: 0;">Edit Task</h3>
+      <input type="text" id="editTitle" placeholder="Title" required>
+      <textarea id="editDescription" placeholder="Description" required></textarea>
+
+      <div class="checkbox-container">
+        <label for="editCompleted">Completed</label>
+        <input type="checkbox" id="editCompleted" style="margin: 0px;">
+      </div>
+
+      <div class="modal-actions">
+        <button id="updateBtn">Update</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
