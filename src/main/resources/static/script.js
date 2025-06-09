@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/api';
+const apiUrl = 'https://taskapp-backend.onrender.com/api';
 let currentEditId = null;
 
 // 🔧 Helper to escape backticks so they don't break template strings
