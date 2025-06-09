@@ -24,7 +24,6 @@ public class TaskController {
 
     @GetMapping("/getAllTask") // <--- Fixed
     public List<Task> getAllTasks() {
-    	System.out.println(taskRepository.findAll()+"logs");
         return taskRepository.findAll();
     }
 
